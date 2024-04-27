@@ -75,7 +75,7 @@ jobs:
           key: packages-cache
 
       - name: Uploading ISO 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: debian-amd64.iso
           path: ${{ env.LB }}/live-image-amd64.hybrid.iso
@@ -87,7 +87,7 @@ jobs:
           mount -o loop ${LB}/live-image-amd64.hybrid.iso ${LB}/tmp
 
       - name: Uploading vmlinuz
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: vmlinuz
           path: |
@@ -95,7 +95,7 @@ jobs:
           if-no-files-found: error
 
       - name: Uploading initrd.img
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: initrd.img
           path: |
@@ -103,7 +103,7 @@ jobs:
           if-no-files-found: error
 
       - name: Uploading filesystem.squashfs
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: filesystem.squashfs
           path: |
