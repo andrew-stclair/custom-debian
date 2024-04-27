@@ -64,9 +64,9 @@ jobs:
       - name: Building
         run: |
           cd ${LB}
-          lb clean --all
-          lb config
-          lb build
+          ${LB}/auto/clean
+          ${LB}/auto/config
+          ${LB}/auto/build
 
       - name: Save cache
         uses: actions/cache/save@v3
