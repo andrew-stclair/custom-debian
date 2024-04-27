@@ -46,18 +46,19 @@ catfish
 #nautilus-wipe # bullseye only
 
 #Section: Desktop environment
-#Description: xfce4
-xfdesktop4
-xfwm4
-xfce4-session
-xfce4-notifyd
-xfce4-whiskermenu-plugin
-gmrun
-xfce4-panel
-xfce4-places-plugin
-xfce4-weather-plugin
-xfce4-netload-plugin
-xfce4-pulseaudio-plugin
+#Description: gnome
+task-gnome-desktop
+#Alt: xfdesktop4
+#Alt: xfwm4
+#Alt: xfce4-session
+#Alt: xfce4-notifyd
+#Alt: xfce4-whiskermenu-plugin
+#Alt: gmrun
+#Alt: xfce4-panel
+#Alt: xfce4-places-plugin
+#Alt: xfce4-weather-plugin
+#Alt: xfce4-netload-plugin
+#Alt: xfce4-pulseaudio-plugin
 #Alt: plank
 #Alt: kupfer
 #Alt: gnome-pie
@@ -153,7 +154,7 @@ vim-tiny
 #Alt: nfoview
 
 #Section: Sticky notes
-#xfce4-notes # experimental only
+##Alt: xfce4-notes # experimental only
 #Alt: xpad
 
 #Section: Maps
@@ -173,8 +174,8 @@ vim-tiny
 #Alt: gpsprune
 
 #Section: Screenshots
-#Description: xfce4-screenshooter
-xfce4-screenshooter
+#Description: #Alt: xfce4-screenshooter
+#Alt: xfce4-screenshooter
 #Alt: scrot
 #Alt: gnome-screenshot
 #Alt: flameshot
@@ -188,7 +189,7 @@ tty-clock
 #Alt: dclock
 #Alt: gtimer
 #Alt: stopwatch
-#Alt: xfce4-timer-plugin
+#Alt: #Alt: xfce4-timer-plugin
 #Alt: screenruler
 
 
@@ -204,8 +205,8 @@ units
 #gbase # sid only
 
 #Section: Terminal emulators
-#Description: xfce4-terminal
-xfce4-terminal
+#Description: #Alt: xfce4-terminal
+#Alt: xfce4-terminal
 #Alt: lxterminal
 #Alt: gnome-terminal
 #Alt: guake
@@ -233,7 +234,7 @@ redshift-gtk
 #Alt: cdrdao
 
 #Section: Desktop configuration utilities
-xfce4-settings
+#Alt: xfce4-settings
 gnome-system-tools
 menulibre
 dconf-editor
@@ -243,9 +244,9 @@ dconf-gsettings-backend
 #Alt: gnome-settings-daemon
 
 #Section: Power management
-#Description: xfce4-power-manager
-xfce4-power-manager
-xfce4-battery-plugin
+#Description: #Alt: xfce4-power-manager
+#Alt: xfce4-power-manager
+#Alt: xfce4-battery-plugin
 radeontool
 bumblebee
 vbetool
@@ -285,7 +286,7 @@ iamerican
 ibritish
 ifrench-gut
 wfrench
-#Alt: xfce4-dict
+#Alt: #Alt: xfce4-dict
 #Alt: gnome-dictionary
 #Alt: goldendict
 #Alt: verbiste-gnome
