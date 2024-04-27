@@ -39,19 +39,14 @@ jobs:
       - name: Create live-build directory structure
         run: |
           mkdir ${LB}
-          mkdir ${LB}/auto
-          mkdir ${LB}/config
           cd ${LB}
+          lb config
 
       - name: Adjust live-build configuration
         run: |
           cp -vr ${REPO}/auto/* ${LB}/auto/
           cp -vr ${REPO}/config/* ${LB}/config/
           cp -vr /etc/ssl ${LB}/config/includes.chroot/etc/ssl
-
-      - name: Configure live-build
-        run: |
-          lb config
 
       - name: Building
         run: |
