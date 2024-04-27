@@ -143,6 +143,7 @@ kiwix-tools
 
 #Section: Network management
 #Description: network-manager-gnome
+ca-certificates
 network-manager-gnome
 network-manager-openvpn-gnome
 wireguard
