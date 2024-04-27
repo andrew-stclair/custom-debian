@@ -3,10 +3,10 @@
 # see 'man lb config'
 
 lb config noauto \
---apt-recommends false \
+--apt-recommends true \
 --apt-indices false \
 --architectures amd64 \
---archive-areas 'main contrib non-free' \
+--archive-areas 'main contrib non-free non-free-firmware' \
 --backports true \
 --security true \
 --updates true \
@@ -25,7 +25,7 @@ lb config noauto \
 --firmware-chroot true \
 --initramfs live-boot \
 --iso-publisher debian-live-config \
---iso-volume debian-live-config-4.1.0 \
+--iso-volume debian-live-config \
 --linux-packages "linux-image linux-headers" \
 --bootappend-live "boot=live config splash" \
 --memtest memtest86+ \

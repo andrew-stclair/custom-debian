@@ -40,6 +40,7 @@ jobs:
         run: |
           mkdir ${LB}
           cd ${LB}
+          lb clean --all
           lb config
 
       - name: Adjust live-build configuration
@@ -51,8 +52,6 @@ jobs:
       - name: Building
         run: |
           cd ${LB}
-          lb clean --all
-          lb config
           lb build
       
       - name: Tree
