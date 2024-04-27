@@ -33,8 +33,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          apt update
-          apt install -y live-build git ca-certificates
+          apt-get update
+          apt-get install -y live-build git ca-certificates
 
       - name: Create live-build directory structure
         run: |
