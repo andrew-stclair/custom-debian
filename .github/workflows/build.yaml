@@ -39,6 +39,8 @@ jobs:
       - name: Create live-build directory structure
         run: |
           mkdir ${LB}
+          mkdir ${LB}/auto
+          mkdir ${LB}/config
           cd ${LB}
 
       - name: Adjust live-build configuration
