@@ -53,7 +53,10 @@ jobs:
       
       - name: Tree
         if: always()
-        run: tree
+        run: |
+          apt-get update
+          apt-get install tree -y
+          tree
 
       - name: Uploading ISO 
         uses: actions/upload-artifact@v3
