@@ -12,3 +12,4 @@ config/binary
 config/bootstrap
 config/chroot
 config/common
+/live-build

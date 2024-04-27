@@ -15,6 +15,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Build ISO
 
     container:
       image: debian:latest
@@ -43,7 +44,6 @@ jobs:
 
       - name: Adjust live-build configuration
         run: |
-          cp -vr ${REPO}/auto/* ${LB}/auto/
           cp -vr ${REPO}/config/* ${LB}/config/
 
       - name: Building

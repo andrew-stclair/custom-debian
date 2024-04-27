@@ -1,10 +1,8 @@
 # debian-live-config
 
-![](https://gitlab.com/nodiscc/debian-live-config/badges/master/pipeline.svg)
+[![CI](https://github.com/andrew-stclair/custom-debian/actions/workflows/build.yaml/badge.svg?branch=master)](https://github.com/andrew-stclair/custom-debian/actions/workflows/build.yaml)
 
 [Debian GNU/Linux](https://www.debian.org/) desktop operating system for personal computers & workstations.
-
-![](https://gitlab.com/nodiscc/toolbox/-/raw/master/DOC/SCREENSHOTS/debian-live-config-4.0.0-main.png)
 
 ## Features
 
