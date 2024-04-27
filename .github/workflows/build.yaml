@@ -52,10 +52,8 @@ jobs:
       - name: Extra Packages
         run: |
           mkdir -p ${LB}/cache/downloads/ ${LB}/config/packages.chroot/
-          wget https://nodiscc.gitlab.io/toolbox/pool/main/b/bleachbit-cleanerml/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb \
-            -O ${LB}/config/packages.chroot/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb
-          wget https://nodiscc.gitlab.io/toolbox/pool/main/u/user.js/user.js_0.9.0-1_all.deb \
-            -O ${LB}/config/packages.chroot/user.js_0.9.0-1_all.deb
+          wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb \
+            -O ${LB}/config/packages.chroot/steam.deb
 
       - name: Restore cache
         uses: actions/cache/restore@v3
