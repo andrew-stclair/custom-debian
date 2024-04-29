@@ -48,15 +48,14 @@ jobs:
         run: |
           cp -vr ${REPO}/auto/* ${LB}/auto/
           cp -vr ${REPO}/config/* ${LB}/config/
-          cp -vr /etc/ssl ${LB}/config/includes.chroot/etc/ssl
 
       - name: Extra Packages
         run: |
-          mkdir -p ${LB}/cache/downloads/ ${LB}/config/packages.chroot/
+          mkdir -p ${LB}/cache/downloads/ ${LB}/config/packages/
           wget "https://cdn.akamai.steamstatic.com/client/installer/steam.deb" \
-            -O ${LB}/config/packages.chroot/steam.deb
+            -O ${LB}/config/packages/steam.deb
           wget "https://discord.com/api/download?platform=linux&format=deb" \
-            -O ${LB}/config/packages.chroot/discord.deb
+            -O ${LB}/config/packages/discord.deb
 
       - name: Restore cache
         uses: actions/cache/restore@v4
@@ -118,7 +117,7 @@ jobs:
         run: |
           cd ${LB}
           lb clean --all
-          rm -rvf config/packages.chroot/
+          rm -rvf config/packages/
           rm -rf .venv/
           lb clean --purge
           rm -rvf cache/downloads/
