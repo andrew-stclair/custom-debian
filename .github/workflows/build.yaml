@@ -67,6 +67,11 @@ jobs:
           lb clean --all
           lb config
           lb build
+      
+      - name: Search
+        if: always()
+        run: |
+          find . -name "*.iso"
 
       - name: Save cache
         uses: actions/cache/save@v4
