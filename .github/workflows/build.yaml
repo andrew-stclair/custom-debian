@@ -52,8 +52,10 @@ jobs:
       - name: Extra Packages
         run: |
           mkdir -p ${LB}/cache/downloads/ ${LB}/config/packages.chroot/
-          wget https://cdn.akamai.steamstatic.com/client/installer/steam.deb \
+          wget "https://cdn.akamai.steamstatic.com/client/installer/steam.deb" \
             -O ${LB}/config/packages.chroot/steam.deb
+          wget "https://discord.com/api/download?platform=linux&format=deb" \
+            -O ${LB}/config/packages.chroot/discord.deb
 
       - name: Restore cache
         uses: actions/cache/restore@v4
@@ -67,17 +69,12 @@ jobs:
           lb clean --all
           lb config
           lb build
-      
-      - name: Search
-        if: always()
-        run: |
-          find . -name "*.iso"
 
       - name: Save cache
         uses: actions/cache/save@v4
         with:
           path: ${{ env.LB }}/cache/packages*
-          key: packages-cache
+          key: packages-cache-${{ github.run_id }}
 
       - name: Uploading ISO 
         uses: actions/upload-artifact@v4
