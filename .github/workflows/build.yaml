@@ -56,7 +56,7 @@ jobs:
             -O ${LB}/config/packages.chroot/steam.deb
 
       - name: Restore cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ${{ env.LB }}/cache/packages*
           key: packages-cache
@@ -69,7 +69,7 @@ jobs:
           lb build
 
       - name: Save cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         with:
           path: ${{ env.LB }}/cache/packages*
           key: packages-cache
