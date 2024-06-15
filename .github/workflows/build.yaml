@@ -56,6 +56,7 @@ jobs:
             -O ${LB}/config/packages/steam.deb
           wget "https://discord.com/api/download?platform=linux&format=deb" \
             -O ${LB}/config/packages/discord.deb
+          for file in $(find ${LB}/config/packages -name "*.deb" -type f); do dpkg-name ${file}; done
 
       - name: Restore cache
         uses: actions/cache/restore@v4
@@ -79,7 +80,7 @@ jobs:
       - name: Uploading ISO 
         uses: actions/upload-artifact@v4
         with:
-          name: debian-amd64.iso
+          name: iso
           path: ${{ env.LB }}/live-image-amd64.hybrid.iso
           if-no-files-found: error
 
@@ -99,7 +100,7 @@ jobs:
       - name: Uploading initrd.img
         uses: actions/upload-artifact@v4
         with:
-          name: initrd.img
+          name: initrd
           path: |
             ${{ env.LB }}/tmp/live/initrd.img
           if-no-files-found: error
@@ -107,7 +108,7 @@ jobs:
       - name: Uploading filesystem.squashfs
         uses: actions/upload-artifact@v4
         with:
-          name: filesystem.squashfs
+          name: filesystem
           path: |
             ${{ env.LB }}/tmp/live/filesystem.squashfs
           if-no-files-found: error
