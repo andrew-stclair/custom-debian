@@ -1,6 +1,3 @@
-#Title: VLC
-#Section: video
-#Description: multimedia player and streamer
 vlc-bin
 vlc-plugin-base
 vlc-plugin-qt
