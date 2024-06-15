@@ -4,15 +4,8 @@ menu width 82
 menu title dlc 4.1.0 - Boot menu
 include stdmenu.cfg
 
-label live-@FLAVOUR@-english
-        menu label ^Live (@FLAVOUR@) (English)
-        menu default
-        linux @LINUX@
-        initrd @INITRD@
-        append @APPEND_LIVE@ locales=en_US.UTF-8
-
 label live-@FLAVOUR@-australian
-        menu label ^Live (@FLAVOUR@) (French)
+        menu label ^Live (@FLAVOUR@) (Australian)
         menu default
         linux @LINUX@
         initrd @INITRD@
