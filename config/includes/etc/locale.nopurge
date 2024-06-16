@@ -60,8 +60,5 @@ SHOWFREEDSPACE
 # after package installations done with apt-get(8):
 
 en
-en_US
-en_US.UTF-8
-fr
-fr_FR
-fr_FR.UTF-8
+en_AU
+en_AU.UTF-8
