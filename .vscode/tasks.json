@@ -6,8 +6,12 @@
         {
             "label": "Build ISO",
             "type": "shell",
-            "command": "./scripts/build.sh",
-            "problemMatcher": []
+            "command": "./scripts/build.sh | tee build.log",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         }
     ]
 }

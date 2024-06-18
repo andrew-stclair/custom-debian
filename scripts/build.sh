@@ -15,14 +15,16 @@ function runner() {
 
 echo "--- Installing dependencies"
 runner apt-get update
-runner apt-get install -y live-build make build-essential wget git unzip colordiff apt-transport-https rename ovmf rsync python3-venv gnupg
+runner apt-get install -y live-build make build-essential wget git unzip colordiff apt-transport-https rename ovmf rsync python3-venv gnupg tree
 
 echo "--- Creating directory structure"
 runner mkdir -p /workdir
-runner mkdir -p /workdir/auto
-runner mkdir -p /workdir/config
-runner cp -r /repo/auto/* /workdir/auto/
-runner cp -r /repo/config/* /workdir/config/
+
+echo "--- Copying in the custom configuration"
+runner cp -vr /repo/auto /workdir/auto
+runner cp -vr /repo/config /workdir/config
+runner chown -R root:root /workdir
+runner tree
 
 echo "--- Grabbing extra packages"
 runner mkdir -p /workdir/cache/downloads/ /workdir/config/packages/
@@ -32,11 +34,12 @@ runner dpkg-name /workdir/config/packages/steam.deb
 runner dpkg-name /workdir/config/packages/discord.deb
 
 echo "--- Building"
+runner tree
 runner lb clean --all
 runner lb config
 runner lb build
 
-echo "--- Saving the iso"
+echo "--- Saving the ISO"
 runner cp /workdir/live-image-amd64.hybrid.iso /repo/live-image-amd64.hybrid.iso
 
 echo "--- Cleaning up"
