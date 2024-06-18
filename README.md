@@ -4,4 +4,6 @@
 
 [Debian GNU/Linux](https://www.debian.org/) desktop operating system for personal computers & workstations.
 
+[live-build documentation](https://live-team.pages.debian.net/live-manual/)
+
 More to come...

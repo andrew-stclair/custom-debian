@@ -27,7 +27,7 @@ lb config noauto \
 --iso-publisher debian-live-config \
 --iso-volume debian-live-config \
 --linux-packages "linux-image linux-headers" \
---bootappend-live "boot=live config splash" \
+--bootappend-live "boot=live config splash components username=live-user locales=en_AU.UTF-8" \
 --memtest memtest86+ \
 --win32-loader true
 
