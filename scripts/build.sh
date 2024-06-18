@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
 echo "--- Initialize Environment"
+if [ -f live-image-amd64.hybrid.iso ]; then
+    rm -rf live-image-amd64.hybrid.iso
+fi
+
 mkdir -p cache
 docker run --privileged --detach --name live-build --volume $(pwd):/repo --volume $(pwd)/cache:/workdir/cache --volume /proc:/proc --workdir /workdir debian:bookworm tail -f /.dockerenv
 
