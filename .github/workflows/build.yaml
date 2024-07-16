@@ -39,22 +39,22 @@ jobs:
 
       - name: Create live-build directory structure
         run: |
-          mkdir ${LB}
-          cd ${LB}
+          mkdir ${{ env.LB }}
+          cd ${{ env.LB }}
 
       - name: Adjust live-build configuration
         run: |
-          cp -vr ${REPO}/auto ${LB}/auto
-          cp -vr ${REPO}/config ${LB}/config
+          cp -vr ${REPO}/auto ${{ env.LB }}/auto
+          cp -vr ${REPO}/config ${{ env.LB }}/config
 
       - name: Extra Packages
         run: |
-          mkdir -p ${LB}/cache/downloads/ ${LB}/config/packages/
+          mkdir -p ${{ env.LB }}/cache/downloads/ ${{ env.LB }}/config/packages/
           wget "https://cdn.akamai.steamstatic.com/client/installer/steam.deb" \
-            -O ${LB}/config/packages/steam.deb
+            -O ${{ env.LB }}/config/packages/steam.deb
           wget "https://discord.com/api/download?platform=linux&format=deb" \
-            -O ${LB}/config/packages/discord.deb
-          for file in $(find ${LB}/config/packages -name "*.deb" -type f); do dpkg-name ${file}; done
+            -O ${{ env.LB }}/config/packages/discord.deb
+          for file in $(find ${{ env.LB }}/config/packages -name "*.deb" -type f); do dpkg-name ${file}; done
 
       - name: Restore cache
         uses: actions/cache/restore@v4
@@ -64,7 +64,7 @@ jobs:
 
       - name: Building
         run: |
-          cd ${LB}
+          cd ${{ env.LB }}
           lb clean --all
           lb config
           lb build
@@ -84,37 +84,23 @@ jobs:
 
       - name: Mount ISO to extract required files (filesystem.squashfs, vmlinuz, initrd.img)
         run: |
-          mkdir ${LB}/tmp/
-          mount -o loop ${LB}/live-image-amd64.hybrid.iso ${LB}/tmp
+          mkdir ${{ env.LB }}/tmp/
+          mount -o loop ${{ env.LB }}/live-image-amd64.hybrid.iso ${{ env.LB }}/tmp
 
-      - name: Uploading vmlinuz
+      - name: Uploading netboot files
         uses: actions/upload-artifact@v4
         with:
-          name: vmlinuz
+          name: netboot-files
           path: |
             ${{ env.LB }}/tmp/live/vmlinuz
-          if-no-files-found: error
-
-      - name: Uploading initrd.img
-        uses: actions/upload-artifact@v4
-        with:
-          name: initrd
-          path: |
             ${{ env.LB }}/tmp/live/initrd.img
-          if-no-files-found: error
-
-      - name: Uploading filesystem.squashfs
-        uses: actions/upload-artifact@v4
-        with:
-          name: filesystem
-          path: |
             ${{ env.LB }}/tmp/live/filesystem.squashfs
           if-no-files-found: error
 
       - name: Cleanup
         if: always()
         run: |
-          cd ${LB}
+          cd ${{ env.LB }}
           lb clean --all
           rm -rvf config/packages/
           rm -rf .venv/
