@@ -3,7 +3,7 @@
 # see 'man lb config'
 
 lb config noauto \
---apt-recommends false \
+--apt-recommends true \
 --apt-indices false \
 --architectures amd64 \
 --archive-areas 'main contrib non-free non-free-firmware' \

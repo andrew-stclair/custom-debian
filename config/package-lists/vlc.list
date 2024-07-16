@@ -1,16 +1,2 @@
 vlc
-vlc-bin
-vlc-plugin-base
-vlc-plugin-qt
-vlc-plugin-video-output
-vlc-l10n
-vlc-plugin-access-extra
-vlc-plugin-notify
-vlc-plugin-samba
-vlc-plugin-skins2
-vlc-plugin-video-splitter
-vlc-plugin-visualization
-vlc-plugin-fluidsynth
-vlc-plugin-jack
 vlc-plugin-pipewire
-vlc-plugin-svg
