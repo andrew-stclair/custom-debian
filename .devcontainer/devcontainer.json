@@ -2,7 +2,7 @@
 	"image": "mcr.microsoft.com/devcontainers/base:dev-bookworm",
 	"features": {
 		"ghcr.io/devcontainers-contrib/features/apt-get-packages:1": {
-			"packages": "live-build,colordiff,rename,ovmf"
+			"packages": "live-build,colordiff,rename,ovmf,dctrl-tools,tasksel-data"
 		},
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
 	}

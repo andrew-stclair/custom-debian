@@ -1,1 +1,7 @@
 qemu-guest-agent
+live-boot
+live-config
+live-config-systemd
+user-setup
+live-tools
+eject
