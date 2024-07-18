@@ -1,2 +1,16 @@
+# https://mike632t.wordpress.com/2022/06/12/installing-kde-on-debian-bullseye/
 kde-plasma-desktop
+
+# Display Manager
 sddm
+sddm-theme-breeze
+
+# Window Managers
+kwin-x11
+kwin-wayland
+
+# Recommended packages
+systemsettings
+qml-module-org-kde-newstuff
+ca-certificates
+kscreen
