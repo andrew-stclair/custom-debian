@@ -14,3 +14,6 @@ systemsettings
 qml-module-org-kde-newstuff
 ca-certificates
 kscreen
+plasma-discover
+plasma-discover-backend-flatpak
+plasma-discover-backend-fwupd
