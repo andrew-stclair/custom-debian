@@ -1,0 +1,6 @@
+#!/bin/bash
+# Alacritty themes
+git clone https://github.com/alacritty/alacritty-theme /etc/skel/.config/alacritty/themes
+
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm /etc/skel/.tmux/plugins/tpm

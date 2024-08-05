@@ -3,3 +3,5 @@ ufw
 ufw-applications
 alacritty
 locales
+git
+tmux
