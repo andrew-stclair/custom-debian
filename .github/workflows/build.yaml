@@ -76,7 +76,7 @@ jobs:
           key: packages-cache-${{ github.run_id }}
 
       - name: Uploading ISO 
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: iso
           path: ${{ env.LB }}/live-image-amd64.hybrid.iso
@@ -88,7 +88,7 @@ jobs:
           mount -o loop ${{ env.LB }}/live-image-amd64.hybrid.iso ${{ env.LB }}/tmp
 
       - name: Uploading netboot files
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: netboot-files
           path: |
