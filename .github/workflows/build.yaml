@@ -57,7 +57,7 @@ jobs:
           for file in $(find ${{ env.LB }}/config/packages -name "*.deb" -type f); do dpkg-name ${file}; done
 
       - name: Restore cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ env.LB }}/cache/packages*
           key: packages-cache
@@ -70,7 +70,7 @@ jobs:
           lb build
 
       - name: Save cache
-        uses: actions/cache/save@v4
+        uses: actions/cache/save@v5
         with:
           path: ${{ env.LB }}/cache/packages*
           key: packages-cache-${{ github.run_id }}
